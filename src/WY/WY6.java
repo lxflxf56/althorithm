@@ -78,7 +78,12 @@ public class WY6 {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        String str=scanner.nextLine();
-        WY6 wy6=new WY6(str);
+        int n=scanner.nextInt();
+        scanner.nextLine();
+        for (int i=0;i<n;i++){
+            String str=scanner.nextLine();
+            WY6 wy6=new WY6(str);
+        }
+
     }
 }

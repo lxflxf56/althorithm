@@ -1,11 +1,23 @@
-
+import java.util.PriorityQueue;
 
 public class Test {
 
     public static void main(String args[]){
         //test1();
         //test2();
-        test3();
+        //test3();
+        test4();
+    }
+
+    public static void test4(){
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        minHeap.offer(3);
+        minHeap.offer(5);
+        minHeap.offer(7);
+        System.out.println(minHeap.poll());
+        System.out.println(minHeap.peek());
+        System.out.println(minHeap.peek());
+
     }
 
     public static void test3(){
