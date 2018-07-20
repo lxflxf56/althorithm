@@ -9,6 +9,35 @@ public class QSort {
         array[i]=array[j];
         array[j]=tmp;
     }
+    public static void swap(int[] array,int i,int j){
+        int tmp=array[i];
+        array[i]=array[j];
+        array[j]=tmp;
+    }
+
+    public static void sort(int [] array){
+        sort(array,0,array.length-1);
+    }
+
+    public static void sort(int[] array,int start,int end){
+        if (start<0||end>array.length||start>=end){
+            return;
+        }
+        int i=start,j=end;
+        int k=array[start];
+        while (i<j){
+            while (i<j&&k<array[j]){
+                j--;
+            }
+            swap(array,i,j);
+            while (i<j&&k>array[i]){
+                i++;
+            }
+            swap(array,i,j);
+        }
+        sort(array,start,i-1);
+        sort(array,i+1,end);
+    }
 
     public void sort(int strat,int end){
         int i=strat,j=end,kIndex=strat;
@@ -71,9 +100,16 @@ public class QSort {
         }
     }
     public static void main(String[] args) {
+        /*
         QSort sort=new QSort();
         float[] tmp=readArrFloat("6 5 3 7 9");
         sort.sort(tmp);
-        sort.printArr();
+        sort.printArr();*/
+        int[] tmp=new int[]{5,4,6,2,1};
+        QSort.sort(tmp);
+        for (int a:tmp) {
+            System.out.println(a);
+        }
+
     }
 }

@@ -1,4 +1,7 @@
-import java.util.PriorityQueue;
+import util.ListNode;
+import util.Point;
+
+import java.util.*;
 
 public class Test {
 
@@ -6,7 +9,57 @@ public class Test {
         //test1();
         //test2();
         //test3();
-        test4();
+        //test4();
+        //test5();
+        //test6();
+       /* boolean[] a=new boolean[10];
+        System.out.println(a[0]);//false*/
+        //test7();
+        //System.out.println("sdfsd".substring(1,2));
+        //test8();
+        //test9();
+        String s="ads";System.out.println(s.substring(0,s.length()));
+
+    }
+    public static void test9(){
+        int bits=0;
+        int[] A=new int[]{10,2};
+        for(int j=0;j<A.length;++j){
+            //>>是移位    &是最后一位与运算
+            bits+=(A[j]>>0);//依次获取元素的每一位，并将数组元素相同位相加
+        }
+        int tmp=(1<<3)+(1<<4);
+        System.out.println(tmp);
+    }
+    public static void test8(){
+        Set set=new HashSet();
+        set.add("cat");
+        set.add("cats");
+        set.add("and");
+        set.add("sand");
+        set.add("dog");
+        System.out.println(set.contains("dog"));
+
+    }
+    public static  void test7(){
+        Point point=new Point(1,1);
+        int[][] mat=new int[3][4];
+        Point.setMatrix(mat,point,10);
+        System.out.println(Point.getMatrix(mat,point));
+    }
+
+
+    public static  void test6(){
+        ListNode node =new ListNode(1);
+        node.next=node;
+        ListNode node1 = ListNode.detectCycle(node);
+        System.out.println(node.val);
+    }
+
+    public static  void test5(){
+        Map<Double,Integer> map=new HashMap<>();
+        Integer integer = map.get(3.1);
+        System.out.println(integer);
     }
 
     public static void test4(){

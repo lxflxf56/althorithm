@@ -1,5 +1,6 @@
 package offer1;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -207,6 +208,10 @@ public class BinaryTreeNode {
         System.out.print(node.getData()+" ");
 
     }
+
+
+
+
 
 
     public static int  deep(BinaryTreeNode root){//树的深度
