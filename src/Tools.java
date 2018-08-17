@@ -9,6 +9,14 @@ public class Tools {
         }
         return result;
     }
+    public static int[] readArrInt(String str,String sp){
+        String[] orStr=str.split(sp);
+        int [] result=new int[orStr.length];
+        for (int i=0;i<result.length;i++){
+            result[i]=Integer.parseInt(orStr[i]);
+        }
+        return result;
+    }
     public static float[] readArrFloat(String str){
         String[] orStr=str.split(" ");
         float [] result=new float[orStr.length];

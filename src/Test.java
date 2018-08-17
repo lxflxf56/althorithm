@@ -2,6 +2,8 @@ import util.ListNode;
 import util.Point;
 
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executors;
 
 public class Test {
 
@@ -18,8 +20,9 @@ public class Test {
         //System.out.println("sdfsd".substring(1,2));
         //test8();
         //test9();
-        String s="ads";System.out.println(s.substring(0,s.length()));
-
+        //String s="ads";System.out.println(s.substring(0,s.length()));
+        //Executors.newFixedThreadPool(3);
+        new CountDownLatch(1);
     }
     public static void test9(){
         int bits=0;
@@ -30,6 +33,9 @@ public class Test {
         }
         int tmp=(1<<3)+(1<<4);
         System.out.println(tmp);
+               /* HashMap map=new HashMap();
+        map.put("a",1);
+        map.get("a");*/
     }
     public static void test8(){
         Set set=new HashSet();
