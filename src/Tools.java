@@ -9,6 +9,64 @@ public class Tools {
         }
         return result;
     }
+    //byte 8位转int
+    public static int byte4ArrayToInt(byte[] b) {
+        return   b[3] & 0xFF |
+                (b[2] & 0xFF) << 8 |
+                (b[1] & 0xFF) << 16 |
+                (b[0] & 0xFF) << 24;
+    }
+    public static byte[] intToByte4Array(int a) {
+        return new byte[] {
+                (byte) ((a >> 24) & 0xFF),
+                (byte) ((a >> 16) & 0xFF),
+                (byte) ((a >> 8) & 0xFF),
+                (byte) (a & 0xFF)
+        };
+    }
+    //32位
+    public static byte[] intToByte32(int num) {
+        byte[] arr = new byte[32];
+        for (int i = 31; i >= 0; i--) {
+            // &1 也可以改为num&0x01,表示取最地位数字.
+            arr[i] = (byte) (num & 1);
+            // 右移一位.
+            num >>= 1;
+        }
+        return arr;
+    }
+    public static int byte32ToInt(byte[] arr) {
+        if (arr == null || arr.length != 32) {
+            throw new IllegalArgumentException("byte数组必须不为空,并且长度是32!");
+        }
+        int sum = 0;
+        for (int i = 0; i < 32; ++i) {
+            sum |= (arr[i] << (31 - i));
+        }
+        return sum;
+    }
+
+    public static long byte64ToLong(byte[] arr) {
+        if (arr == null || arr.length != 64) {
+            throw new IllegalArgumentException("byte数组必须不为空,并且长度是64!");
+        }
+        long sum = 0L;
+        for (int i = 0; i < 64; ++i) {
+            sum |= ((long) arr[i] << (63 - i));
+        }
+        return sum;
+    }
+    public static byte[] longToByte64(long sum) {
+        byte[] arr = new byte[64];
+        for (int i = 63; i >= 0; i--) {
+            arr[i] = (byte) (sum & 1);
+            sum >>= 1;
+        }
+        return arr;
+    }
+
+
+
     public static int[] readArrInt(String str,String sp){
         String[] orStr=str.split(sp);
         int [] result=new int[orStr.length];

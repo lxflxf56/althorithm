@@ -1,9 +1,8 @@
 import util.ListNode;
 import util.Point;
+import util.Rectangle;
 
 import java.util.*;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
 
 public class Test {
 
@@ -22,8 +21,16 @@ public class Test {
         //test9();
         //String s="ads";System.out.println(s.substring(0,s.length()));
         //Executors.newFixedThreadPool(3);
-        new CountDownLatch(1);
+        //new CountDownLatch(1);
+        test10();
     }
+    public static void test10(){
+        byte[] bytes =Tools.intToByte32(5);
+        for (byte b:bytes){
+            System.out.print(b);
+        }
+    }
+
     public static void test9(){
         int bits=0;
         int[] A=new int[]{10,2};
@@ -37,6 +44,8 @@ public class Test {
         map.put("a",1);
         map.get("a");*/
     }
+
+
     public static void test8(){
         Set set=new HashSet();
         set.add("cat");
