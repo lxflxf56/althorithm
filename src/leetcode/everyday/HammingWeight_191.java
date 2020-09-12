@@ -7,5 +7,7 @@ package leetcode.everyday;
  * @create: 2020-08-10
  */
 public class HammingWeight_191 {
-
+    public int hammingWeight(int n) {
+        return 0;
+    }
 }
